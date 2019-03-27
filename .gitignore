@@ -1,0 +1,9 @@
+qlite3
+.sass-cache
+*.css.map
+CACHE
+dev_settings.py
+staticfiles
+media/
+.idea/
+
