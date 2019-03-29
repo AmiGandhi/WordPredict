@@ -96,6 +96,8 @@ ipython_config.py
 
 # celery beat schedule file
 celerybeat-schedule
+.idea/
+
 
 # SageMath parsed files
 *.sage.py
