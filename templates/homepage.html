@@ -1,0 +1,94 @@
+{% extends 'header.html' %}
+{% block content %}
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Typing Assistant</h1>
+            <p>The respective typing assistant will help you guys type better by predicting the next word</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-4" style="float:left;">
+            <div class="row">
+
+                <form>
+                    <div class="form-group">
+                        <label for="phrase">Please enter a phase of 3-4 words</label>
+                        <input type="phrase" class="form-control" id="phrase" aria-describedby="phraseHelp" placeholder="Enter Phrase">
+                        <small id="phraseHelp" class="form-text text-muted">It might take a second or less.</small>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-8">
+            <div class="row">
+
+                <div id="charthere" style="min-width:700px; height: 600px; margin: 0 auto"></div>
+
+            </div>
+        </div>
+    </div>
+ <script>
+
+
+Highcharts.chart('charthere', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Next word in the phrase'
+    },
+    subtitle: {
+        text: 'Source: n-gram model'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Word (percentage)'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Next Word: <b>{point.y:.1f}%</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['for', 84.2],
+            ['the', 20.8],
+            ['in', 5],
+            ['a', 1],
+            ['an', 0.5],
+            ['other', 0.25],
+            ['uknown', 0.025],
+
+        ],
+        dataLabels: {
+            enabled: false,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+    </script>
+{% endblock %}
