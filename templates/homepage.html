@@ -8,14 +8,20 @@
         </div>
     </div>
     <div class="container">
-        <div class="col-4" style="float:left;">
+        <div class="col-4" style="float:left;    z-index: 90;">
             <div class="row">
 
                 <form>
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="phrase">Please enter a phase of 3-4 words</label>
-                        <input type="phrase" class="form-control" id="phrase" aria-describedby="phraseHelp" placeholder="Enter Phrase">
+                        <input type="text" class="form-control" id="phrase" aria-describedby="phraseHelp" placeholder="Enter Phrase">
                         <small id="phraseHelp" class="form-text text-muted">It might take a second or less.</small>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px">
+                        <label for="result"><span id="result-text"></span> <span id="result-predicted"></span></label>
+
                     </div>
                 </form>
             </div>
@@ -31,64 +37,5 @@
     </div>
  <script>
 
-
-Highcharts.chart('charthere', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Next word in the phrase'
-    },
-    subtitle: {
-        text: 'Source: n-gram model'
-    },
-    xAxis: {
-        type: 'category',
-        labels: {
-            rotation: -45,
-            style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
-            }
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Word (percentage)'
-        }
-    },
-    legend: {
-        enabled: false
-    },
-    tooltip: {
-        pointFormat: 'Next Word: <b>{point.y:.1f}%</b>'
-    },
-    series: [{
-        name: 'Population',
-        data: [
-            ['for', 84.2],
-            ['the', 20.8],
-            ['in', 5],
-            ['a', 1],
-            ['an', 0.5],
-            ['other', 0.25],
-            ['uknown', 0.025],
-
-        ],
-        dataLabels: {
-            enabled: false,
-            rotation: -90,
-            color: '#FFFFFF',
-            align: 'right',
-            format: '{point.y:.1f}', // one decimal
-            y: 10, // 10 pixels down from the top
-            style: {
-                fontSize: '13px',
-                fontFamily: 'Verdana, sans-serif'
-            }
-        }
-    }]
-});
     </script>
 {% endblock %}

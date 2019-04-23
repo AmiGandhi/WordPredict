@@ -1,5 +1,4 @@
-#!/home/krunal/Northeastern/BDIA/Project/venv/bin/python
-
+#!/home/krunal/Northeastern/BDIA/Project/venv/bin/python3.6
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -1,2 +1,7 @@
+nltk
+scikit-learn==0.20.3
+numpy
 Django==2.1.7
 pytz==2018.9
+wheel
+pandas
