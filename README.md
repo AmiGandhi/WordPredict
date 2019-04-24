@@ -21,3 +21,14 @@ N-gram language modelling with Stupid Backoff smoothing technique and Recurrent 
 ### CONCLUSION/RESULT:
 
 On applying the technique of Stupid Backoff, we got average perplexity of around 31 which means the model was just uncertain for 31 alternative predictions. On training the RNN LSTM model for 40 epochs, we get the categorical accuracy to be around 21% on the validation set. But, if LSTM models are trained for over 100 epochs, it outperforms in terms of its prediction. However, if the aim is to predict word with very less computation expense, then Stupid Backoff is the best method which gives good prediction for even a large textual corpus.
+
+
+### RUN APPLICATION
+
+```git clone <repo>```
+
+```pip install -r requirements.txt```
+
+```python manaye.py runserver```
+
+Visit 127.0.0.1:8000
